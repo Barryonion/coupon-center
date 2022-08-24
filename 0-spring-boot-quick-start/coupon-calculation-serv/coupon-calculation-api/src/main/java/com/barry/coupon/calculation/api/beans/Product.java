@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product {
+    // 搭建品类（商品）中心，用来存储商品信息，逐步完善应用
     private Long productId;
     // 商品的价格
     private long price;
