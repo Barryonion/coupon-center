@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 // 封装订单信息
@@ -23,4 +24,8 @@ public class ShoppingCart {
     // 目前只支持单张优惠券
     // 但是为了以后的扩展考虑，可以添加多个优惠券的计算逻辑
     private List<CouponInfo> couponInfos;
+
+    @NotNull
+    private Long userId;
+
 }
