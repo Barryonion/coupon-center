@@ -8,6 +8,7 @@ import java.util.stream.Stream;
 @Getter
 @AllArgsConstructor
 public enum CouponType {
+    //
     UNKNOWN("unknown", "0"),
     MONEY_OFF("满减券", "1"),
     DISCOUNT("打折", "2"),

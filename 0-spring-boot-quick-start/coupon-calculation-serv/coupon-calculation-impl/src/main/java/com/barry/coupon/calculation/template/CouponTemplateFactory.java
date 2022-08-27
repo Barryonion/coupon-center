@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
-// 工厂方法根据订单中的优惠券信息，返回对应的Template用于计算优惠价
+/**
+ * 工厂方法根据订单中的优惠券信息，返回对应的Template用于计算优惠价
+ * */
 @Component
 @Slf4j
 public class CouponTemplateFactory {
