@@ -36,7 +36,9 @@ public class CouponTemplateServiceImpl implements CouponTemplateService {
     @Autowired
     private CouponTemplateDao templateDao;
 
-    // 克隆优惠券
+    /**
+     * 克隆优惠券
+     * */
     @Override
     public CouponTemplateInfo cloneTemplate(Long templateId) {
         log.info("cloning template id {}", templateId);
@@ -130,7 +132,9 @@ public class CouponTemplateServiceImpl implements CouponTemplateService {
         return template.map(CouponTemplateConverter::convertToTemplateInfo).orElse(null);
     }
 
-    // 将券无效化
+    /**
+     * 将券无效化
+     * */
     @Override
     @Transactional
     public void deleteTemplate(Long id) {
