@@ -1,32 +1,38 @@
 package com.geekbang.coupon.customer.loadbalance;
 
-import com.alibaba.cloud.nacos.NacosServiceInstance;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.*;
-import org.springframework.cloud.loadbalancer.core.*;
+import org.springframework.cloud.loadbalancer.core.NoopServiceInstanceListSupplier;
+import org.springframework.cloud.loadbalancer.core.ReactorServiceInstanceLoadBalancer;
+import org.springframework.cloud.loadbalancer.core.SelectedInstanceCallback;
+import org.springframework.cloud.loadbalancer.core.ServiceInstanceListSupplier;
 import org.springframework.http.HttpHeaders;
 import reactor.core.publisher.Mono;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 import static com.geekbang.coupon.customer.constant.Constant.TRAFFIC_VERSION;
 
-// 可以将这个负载均衡策略单独拎出来，作为一个公共组件提供服务
+/**
+ * 可以将这个负载均衡策略单独拎出来，作为一个公共组件提供服务
+ *
+ * @author barry*/
 @Slf4j
 public class CanaryRule implements ReactorServiceInstanceLoadBalancer {
 
     private ObjectProvider<ServiceInstanceListSupplier> serviceInstanceListSupplierProvider;
     private String serviceId;
 
-    // 定义一个轮询策略的种子
+    /**
+     * 定义一个轮询策略的种子
+     */
     final AtomicInteger position;
 
     public CanaryRule(ObjectProvider<ServiceInstanceListSupplier> serviceInstanceListSupplierProvider,
@@ -89,7 +95,9 @@ public class CanaryRule implements ReactorServiceInstanceLoadBalancer {
         return getRoundRobinInstance(canaryInstances);
     }
 
-    // 使用轮训机制获取节点
+    /**
+     * 使用轮训机制获取节点
+     */
     private Response<ServiceInstance> getRoundRobinInstance(List<ServiceInstance> instances) {
         // 如果没有可用节点，则返回空
         if (instances.isEmpty()) {
