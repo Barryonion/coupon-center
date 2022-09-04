@@ -1,0 +1,13 @@
+/0-spring-boot-quick-start/coupon-template-serv/coupon-template-impl/target/
+/0-spring-boot-quick-start/coupon-template-serv/coupon-template-dao/target/
+/0-spring-boot-quick-start/coupon-template-serv/coupon-template-api/target/
+/.idea/
+/0-spring-boot-quick-start/0-spring-boot-quick-start.iml
+/0-spring-boot-quick-start/barry-coupon.iml
+/0-spring-boot-quick-start/coupon-calculation-serv/coupon-calculation-serv.iml
+/0-spring-boot-quick-start/coupon-customer-serv/coupon-customer-serv.iml
+/0-spring-boot-quick-start/coupon-template-serv/coupon-template-api/coupon-template-api.iml
+/0-spring-boot-quick-start/coupon-template-serv/coupon-template-dao/coupon-template-dao.iml
+/0-spring-boot-quick-start/coupon-template-serv/coupon-template-impl/coupon-template-impl.iml
+/0-spring-boot-quick-start/coupon-template-serv/coupon-template-serv.iml
+/0-spring-boot-quick-start/middleware/middleware.iml
