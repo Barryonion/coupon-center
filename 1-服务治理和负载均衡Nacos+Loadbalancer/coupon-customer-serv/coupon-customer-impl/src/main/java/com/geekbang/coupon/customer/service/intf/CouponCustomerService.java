@@ -11,7 +11,9 @@ import com.geekbang.coupon.template.api.beans.CouponInfo;
 
 import java.util.List;
 
-// 用户对接服务
+/**
+ * 用户对接服务
+ * */
 public interface CouponCustomerService {
 
     /**
