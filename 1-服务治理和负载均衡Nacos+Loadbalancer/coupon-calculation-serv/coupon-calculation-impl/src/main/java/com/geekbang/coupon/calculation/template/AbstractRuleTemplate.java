@@ -58,7 +58,13 @@ public abstract class AbstractRuleTemplate implements RuleTemplate {
         return order;
     }
 
-    // 金额计算具体逻辑，延迟到子类实现
+    /**
+     * 金额计算具体逻辑，延迟到子类实现
+     * @param orderTotalAmount
+     * @param shopTotalAmount
+     * @param quota
+     * @return
+     */
     abstract protected Long calculateNewPrice(Long orderTotalAmount, Long shopTotalAmount, Long quota);
 
     // 计算订单总价
