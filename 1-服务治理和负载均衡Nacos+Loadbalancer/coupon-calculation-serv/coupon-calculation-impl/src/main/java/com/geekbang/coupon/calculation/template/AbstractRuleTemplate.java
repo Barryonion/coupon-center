@@ -74,9 +74,11 @@ public abstract class AbstractRuleTemplate implements RuleTemplate {
                 .sum();
     }
 
-    // 根据门店维度计算每个门店下商品价格
-    // key = shopId
-    // value = 门店商品总价
+    /**
+     * 根据门店维度计算每个门店下商品价格
+     * key = shopId
+     * value = 门店商品总价
+     * */
     protected Map<Long, Long> getTotalPriceGroupByShop(List<Product> products) {
         Map<Long, Long> groups = products.stream()
                 .collect(Collectors.groupingBy(m -> m.getShopId(),
