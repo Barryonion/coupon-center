@@ -79,7 +79,7 @@ public abstract class AbstractRuleTemplate implements RuleTemplate {
      * key = shopId
      * value = 门店商品总价
      * */
-    protected Map<Long, Long> getTotalPriceGroupByShop(List<Product> products) {
+    protected Map<Long, Long>  getTotalPriceGroupByShop(List<Product> products) {
         Map<Long, Long> groups = products.stream()
                 .collect(Collectors.groupingBy(m -> m.getShopId(),
                         Collectors.summingLong(p -> p.getPrice() * p.getCount()))

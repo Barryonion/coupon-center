@@ -48,7 +48,7 @@ public class CouponCustomerServiceImpl implements CouponCustomerService {
         CouponTemplateInfo templateInfo = webClientBuilder.build()
                 // 声明了这是一个GET方法
                 .get()
-                .uri("http://coupon-template-serv/template/getTemplate?id" + request.getCouponTemplateId())
+                .uri("http://coupon-template-serv/template/getTemplate?id=" + request.getCouponTemplateId())
                 .header(TRAFFIC_VERSION, request.getTrafficVersion())
                 .retrieve()
                 .bodyToMono(CouponTemplateInfo.class)

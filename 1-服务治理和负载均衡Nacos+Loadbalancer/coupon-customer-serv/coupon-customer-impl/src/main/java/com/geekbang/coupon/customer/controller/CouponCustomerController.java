@@ -28,27 +28,35 @@ public class CouponCustomerController {
         return customerService.requestCoupon(request);
     }
 
-    // 用户删除优惠券
+    /**
+     * 用户删除优惠券
+     */
     @DeleteMapping("deleteCoupon")
     public void deleteCoupon(@RequestParam("userId") Long userId,
                              @RequestParam("couponId") Long couponId) {
         customerService.deleteCoupon(userId, couponId);
     }
 
-    // 用户模拟计算每个优惠券的优惠价格
+    /**
+     * 用户模拟计算每个优惠券的优惠价格
+     */
     @PostMapping("simulateOrder")
     public SimulationResponse simulate(@Valid @RequestBody SimulationOrder order) {
         return customerService.simulateOrderPrice(order);
     }
 
-    // ResponseEntity - 指定返回状态码 - 可以作为一个课后思考题
+    /**
+     * ResponseEntity - 指定返回状态码 - 可以作为一个课后思考题
+     */
     @PostMapping("placeOrder")
     public ShoppingCart checkout(@Valid @RequestBody ShoppingCart info) {
         return customerService.placeOrder(info);
     }
 
 
-    // 实现的时候最好封装一个search object类
+    /**
+     * 实现的时候最好封装一个search object类
+     */
     @PostMapping("findCoupon")
     public List<CouponInfo> findCoupon(@Valid @RequestBody SearchCoupon request) {
         return customerService.findCoupon(request);
