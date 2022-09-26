@@ -10,8 +10,10 @@ import javax.persistence.Converter;
 public class CouponStatusConverter implements
         AttributeConverter<CouponStatus, Integer> {
 
-    // 如果需要把DB里的值转换成enum对象，就采用这种方式就好了
-    // 利用泛型模板继承AttributeConverter
+    /*
+     如果需要把DB里的值转换成enum对象，就采用这种方式就好了
+     利用泛型模板继承AttributeConverter
+    */
 
     /**
      * enum转DB value
