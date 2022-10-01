@@ -14,7 +14,9 @@ public class Product {
      */
     private Long productId;
 
-    // 商品的价格
+    /**
+     * 商品的价格
+     */
     private long price;
 
     // 商品在购物车里的数量
