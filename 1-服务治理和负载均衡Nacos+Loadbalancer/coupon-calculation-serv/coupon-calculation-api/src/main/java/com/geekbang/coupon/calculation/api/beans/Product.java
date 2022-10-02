@@ -19,7 +19,9 @@ public class Product {
      */
     private long price;
 
-    // 商品在购物车里的数量
+    /**
+     * 商品在购物车里的数量
+     */
     private Integer count;
 
     // 商品销售的门店
