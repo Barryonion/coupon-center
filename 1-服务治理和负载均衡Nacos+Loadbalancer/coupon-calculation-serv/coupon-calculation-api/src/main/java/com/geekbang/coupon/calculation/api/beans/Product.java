@@ -24,7 +24,9 @@ public class Product {
      */
     private Integer count;
 
-    // 商品销售的门店
+    /**
+     * 商品销售的门店
+     */
     private Long shopId;
 
 }
