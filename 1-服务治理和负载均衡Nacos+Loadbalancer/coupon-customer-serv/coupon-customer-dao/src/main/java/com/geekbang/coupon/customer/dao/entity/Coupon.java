@@ -34,7 +34,9 @@ public class Coupon {
     @Column(name = "template_id", nullable = false)
     private Long templateId;
 
-    // 所有者的用户ID
+    /**
+     * 所有者的用户ID
+     */
     @Column(name = "user_id", nullable = false)
     private Long userId;
 
