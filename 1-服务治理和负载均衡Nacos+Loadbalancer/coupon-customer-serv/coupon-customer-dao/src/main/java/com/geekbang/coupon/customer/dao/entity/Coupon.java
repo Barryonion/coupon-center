@@ -44,7 +44,9 @@ public class Coupon {
     @Column(name = "shop_id")
     private Long shopId;
 
-    // 优惠券的使用/未使用状态
+    /**
+     * 优惠券的使用/未使用状态
+     */
     @Column(name = "status", nullable = false)
     @Convert(converter = CouponStatusConverter.class)
     private CouponStatus status;
